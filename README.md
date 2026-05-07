@@ -37,7 +37,7 @@ Através do PDV será possível:
 
 ---
 
-##  Controle de Permissões
+## Controle de Permissões
 
 O sistema contará com diferentes níveis de acesso para garantir maior segurança nas operações.
 
