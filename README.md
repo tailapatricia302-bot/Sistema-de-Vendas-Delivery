@@ -1,7 +1,6 @@
-# PROJETO-FINAL
+# PROJETO FINAL
 
-
-# Sobre o Projeto
+##  Sobre o Projeto
 
 O presente projeto tem como principal objetivo o desenvolvimento de um sistema integrado entre um **PDV (Ponto de Venda)** e um **sistema de delivery**, proporcionando maior praticidade tanto para os clientes quanto para os funcionários da empresa.
 
@@ -37,7 +36,7 @@ Através do PDV será possível:
 
 ---
 
-# Controle de Permissões
+##  Controle de Permissões
 
 O sistema contará com diferentes níveis de acesso para garantir maior segurança nas operações.
 
@@ -49,7 +48,7 @@ Entre as restrições definidas:
 - Não poderá cancelar vendas finalizadas sem autorização;
 - Para realizar cancelamentos será necessária a senha de um supervisor.
 
-# Supervisor
+### Supervisor
 O supervisor possuirá o perfil de acesso com permissão de **SUPERVISOR**, sendo responsável por:
 
 - Autorizar cancelamentos de vendas;
@@ -58,7 +57,7 @@ O supervisor possuirá o perfil de acesso com permissão de **SUPERVISOR**, send
 
 ---
 
-##  Objetivo do Projeto
+## Objetivo do Projeto
 
 O principal objetivo é criar um sistema moderno, funcional e integrado, oferecendo:
 
@@ -67,3 +66,5 @@ O principal objetivo é criar um sistema moderno, funcional e integrado, oferece
 - Facilidade no gerenciamento de pedidos;
 - Segurança nas operações do sistema;
 - Melhor experiência para o cliente final.
+
+---
