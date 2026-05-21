@@ -4,7 +4,7 @@
 
 O  projeto em sitem como principal objetivo o desenvolvimento de um sistema integrado entre um **PDV (Ponto de Venda)** e um **sistema de delivery**, proporcionando maior praticidade tanto para os clientes quanto para os funcionários da empresa.
 
-O sistema permitirá que o cliente (consumidor final) visualize os produtos disponíveis para venda de forma online, podendo realizar pedidos diretamente pela plataforma.
+O sistema permitirá que o cliente (consumidor final) possa  visualizar os produtos disponíveis para venda de forma online, podendo realizar pedidos diretamente pela plataforma.
 
 ---
 
