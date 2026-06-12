@@ -85,16 +85,19 @@ Desenvolver um sistema web para gerenciamento de vendas, produtos, clientes e pe
 
 # 4. Regras de Negócio
 
-1. Apenas usuários autenticados poderão acessar o sistema.
+1. Apenas usuários autenticados poderão acessar o sistema administrativo.
 2. Todo usuário deverá possuir login e senha válidos.
-3. Produtos deverão possuir nome e preço cadastrados.
-4. Um pedido deve conter pelo menos um produto.
-5. Um cliente poderá possuir vários pedidos.
-6. Produtos excluídos não poderão ser utilizados em novos pedidos.
-7. O sistema deverá registrar as operações realizadas pelos usuários.
-8. Apenas usuários autorizados poderão alterar ou excluir registros.
+3. Produtos deverão possuir nome, descrição e preço cadastrados.
+4. Um pedido deverá conter pelo menos um produto.
+5. Um cliente poderá realizar vários pedidos.
+6. Todo pedido realizado ficará com status **Pendente** até aprovação do Administrador.
+7. Apenas usuários com perfil **Administrador** poderão aprovar ou rejeitar vendas.
+8. Somente pedidos aprovados poderão ser finalizados.
+9. Produtos excluídos ou inativos não poderão ser vendidos.
+10. O sistema registrará a data e hora das principais operações realizadas.
+11. Cada pedido deverá possuir um status válido (Pendente, Aprovado, Rejeitado ou Finalizado).
+12. O valor total do pedido será calculado automaticamente com base nos produtos selecionados.
 
----
 
 # 5. Principais Entidades do Sistema
 
@@ -261,41 +264,9 @@ projeto/
 
 ---
 
-# 8. Instalação
 
-1. Clonar o repositório:
 
-```bash
-git clone https://github.com/seuusuario/sistema-vendas.git
-```
-
-2. Importar o banco de dados:
-
-```sql
-database/sistema_vendas.sql
-```
-
-3. Configurar as credenciais do banco de dados no arquivo:
-
-```php
-config/database.php
-```
-
-4. Iniciar o servidor local:
-
-```bash
-php -S localhost:8000
-```
-
-5. Acessar no navegador:
-
-```text
-http://localhost:8000
-```
-
----
-
-# 9. Funcionalidades Extras
+# 8. Funcionalidades Extras
 
 * Dashboard administrativo;
 * Upload de imagens;
@@ -308,7 +279,7 @@ http://localhost:8000
 
 ---
 
-# 10. Benefícios Esperados
+# 9. Benefícios Esperados
 
 * Organização dos processos comerciais;
 * Facilidade no gerenciamento de dados;
@@ -319,8 +290,8 @@ http://localhost:8000
 
 ---
 
-# 11. Desenvolvedora
+# 10. Desenvolvedores
 
-**Taila Santos**
+**Taila Patricia Vieira Dos Santos & Vitor Gabriel C. de Oliveira**
 
 Projeto desenvolvido para fins acadêmicos e aprendizado em desenvolvimento web utilizando PHP, MySQL e Arquitetura MVC.
