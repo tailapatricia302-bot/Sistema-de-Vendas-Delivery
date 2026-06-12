@@ -1,129 +1,111 @@
-# PROJETO FINAL – SISTEMA INTEGRADO DE PDV E DELIVERY
+# SISTEMA DE VENDAS WEB
 
 ## 1. Descrição Geral
 
-O projeto consiste no desenvolvimento de um sistema web integrado entre um Ponto de Venda (PDV) e uma plataforma de Delivery, permitindo o gerenciamento centralizado de vendas presenciais e pedidos online.
+O Sistema de Vendas Web é uma aplicação desenvolvida em PHP utilizando Arquitetura MVC, Programação Orientada a Objetos (POO) e banco de dados MySQL.
 
-O sistema tem como objetivo proporcionar maior praticidade para clientes e funcionários, automatizando processos de venda, controle de pedidos e gerenciamento operacional.
+O sistema foi criado para automatizar o gerenciamento de clientes, empresas, produtos, pedidos e usuários, proporcionando maior organização, agilidade e controle das operações comerciais.
 
-A aplicação será desenvolvida utilizando PHP 8, MySQL, PDO, Programação Orientada a Objetos (POO) e arquitetura MVC.
-
----
-
-## 2. Objetivos
-
-### Objetivo Geral
-
-Desenvolver um sistema integrado de PDV e Delivery capaz de gerenciar vendas, pedidos online e controle operacional de forma segura e eficiente.
-
-### Objetivos Específicos
-
-* Disponibilizar um catálogo online de produtos para os clientes;
-* Permitir a realização de pedidos pela internet;
-* Integrar os pedidos online ao sistema de PDV;
-* Controlar permissões de acesso de acordo com o perfil do usuário;
-* Garantir maior segurança em operações críticas;
-* Facilitar o gerenciamento de produtos, vendas e pedidos.
+A plataforma permite o cadastro e gerenciamento de informações essenciais para o funcionamento de uma empresa, centralizando todos os processos em um único ambiente.
 
 ---
 
-## 3. Funcionalidades do Cliente
+# 2. Objetivos
 
-O cliente poderá acessar a área pública do sistema para:
+## Objetivo Geral
 
-* Visualizar os produtos disponíveis;
-* Consultar preços e descrições;
-* Selecionar produtos e quantidades;
-* Adicionar produtos ao pedido;
-* Escolher a forma de recebimento:
+Desenvolver um sistema web para gerenciamento de vendas, produtos, clientes e pedidos, utilizando boas práticas de programação e arquitetura MVC.
 
-  * Retirada no local;
-  * Entrega delivery;
-* Selecionar a forma de pagamento;
-* Finalizar pedidos;
-* Acompanhar o status do pedido.
+## Objetivos Específicos
 
----
-
-## 4. Integração com o PDV
-
-Todos os pedidos realizados pelo sistema de delivery serão enviados automaticamente para o módulo de PDV.
-
-Através do PDV será possível:
-
-* Receber pedidos realizados online;
-* Aceitar ou rejeitar pedidos;
-* Atualizar o status do pedido;
-* Registrar vendas presenciais;
-* Finalizar vendas;
-* Consultar histórico de vendas;
-* Gerenciar produtos cadastrados;
-* Controlar estoque.
+* Gerenciar usuários do sistema;
+* Controlar cadastros de clientes;
+* Gerenciar empresas cadastradas;
+* Realizar cadastro e manutenção de produtos;
+* Controlar pedidos realizados pelos clientes;
+* Garantir autenticação e segurança de acesso;
+* Facilitar a administração das informações da empresa.
 
 ---
 
-## 5. Controle de Permissões
+# 3. Funcionalidades do Sistema
 
-O sistema contará com controle de acesso baseado em perfis de usuário.
+## Autenticação
 
-### Funcionário
+* Login de usuários;
+* Logout do sistema;
+* Controle de sessão;
+* Restrição de acesso às áreas administrativas.
 
-O perfil Funcionário possuirá permissões limitadas para operações do dia a dia.
+## Usuários
 
-Poderá:
+* Cadastro de usuários;
+* Edição de usuários;
+* Exclusão de usuários;
+* Listagem de usuários cadastrados.
 
-* Registrar vendas;
-* Consultar produtos;
-* Consultar pedidos;
-* Atualizar status de pedidos.
+## Clientes
 
-Não poderá:
+* Cadastro de clientes;
+* Atualização de informações;
+* Exclusão de clientes;
+* Consulta de clientes cadastrados.
 
-* Cancelar vendas finalizadas sem autorização;
-* Executar operações administrativas restritas.
+## Empresas
 
-### Supervisor
+* Cadastro de empresas;
+* Alteração de dados;
+* Exclusão de empresas;
+* Consulta de empresas cadastradas.
 
-O perfil Supervisor terá acesso ampliado ao sistema.
+## Produtos
 
-Poderá:
+* Cadastro de produtos;
+* Edição de produtos;
+* Exclusão de produtos;
+* Consulta de produtos;
+* Upload de imagens dos produtos.
 
-* Autorizar cancelamentos;
-* Validar operações críticas;
-* Gerenciar funcionários;
-* Gerenciar produtos;
-* Acessar relatórios administrativos;
-* Supervisionar operações do sistema.
+## Pedidos
+
+* Cadastro de pedidos;
+* Alteração de pedidos;
+* Exclusão de pedidos;
+* Consulta de pedidos;
+* Registro dos produtos vinculados ao pedido.
+
+## Carrinho de Compras
+
+* Adição de produtos;
+* Remoção de produtos;
+* Atualização de quantidades;
+* Finalização de pedidos.
 
 ---
 
-## 6. Regras de Negócio
+# 4. Regras de Negócio
 
-1. Apenas usuários autenticados poderão acessar o sistema administrativo.
-2. Senhas serão armazenadas utilizando a função password_hash().
-3. Todo pedido deverá possuir pelo menos um item.
-4. Um cliente poderá realizar vários pedidos.
-5. Cada pedido deverá possuir um status.
-6. O estoque será atualizado automaticamente após a confirmação da venda.
-7. Cancelamentos de vendas finalizadas exigirão autorização de um supervisor.
-8. Produtos inativos não poderão ser vendidos.
-9. O sistema registrará data e hora de todas as operações importantes.
+1. Apenas usuários autenticados poderão acessar o sistema.
+2. Todo usuário deverá possuir login e senha válidos.
+3. Produtos deverão possuir nome e preço cadastrados.
+4. Um pedido deve conter pelo menos um produto.
+5. Um cliente poderá possuir vários pedidos.
+6. Produtos excluídos não poderão ser utilizados em novos pedidos.
+7. O sistema deverá registrar as operações realizadas pelos usuários.
+8. Apenas usuários autorizados poderão alterar ou excluir registros.
 
 ---
 
-## 7. Principais Entidades do Sistema
+# 5. Principais Entidades do Sistema
 
-O sistema será composto, no mínimo, pelas seguintes entidades:
-
-### Usuário
+## Usuário
 
 * id
 * nome
 * email
 * senha
-* perfil
 
-### Cliente
+## Cliente
 
 * id
 * nome
@@ -131,63 +113,214 @@ O sistema será composto, no mínimo, pelas seguintes entidades:
 * email
 * endereço
 
-### Produto
+## Empresa
+
+* id
+* razão_social
+* cnpj
+* telefone
+* endereço
+
+## Produto
 
 * id
 * nome
 * descrição
 * preço
-* estoque
 * imagem
 
-### Pedido
+## Pedido
 
 * id
 * cliente_id
-* data
+* data_pedido
+* valor_total
 * status
-* valor_total
-
-### ItemPedido
-
-* id
-* pedido_id
-* produto_id
-* quantidade
-* valor_unitário
-
-### Venda
-
-* id
-* usuário_id
-* data
-* valor_total
-* forma_pagamento
 
 ---
 
-## 8. Funcionalidades Extras
+# 6. Estrutura do Projeto
 
-Para atender aos requisitos do projeto serão implementadas as seguintes funcionalidades adicionais:
+## 📂 Estrutura do Projeto
 
-* Busca de produtos;
-* Upload de imagens de produtos;
-* Controle de estoque;
+```text
+projeto/
+│
+├── app/
+│   ├── controllers/
+│   │   ├── AdminController.php
+│   │   ├── AuthController.php
+│   │   ├── ClienteController.php
+│   │   ├── EmpresaController.php
+│   │   ├── HomeController.php
+│   │   ├── PedidoController.php
+│   │   ├── ProdutoController.php
+│   │   └── UsuarioController.php
+│   │
+│   ├── core/
+│   │   ├── Controller.php
+│   │   ├── Model.php
+│   │   └── Router.php
+│   │
+│   ├── models/
+│   │   ├── Cliente.php
+│   │   ├── Empresa.php
+│   │   ├── Pedido.php
+│   │   ├── Produto.php
+│   │   └── Usuario.php
+│   │
+│   └── views/
+│       ├── auth/
+│       │   ├── admin_login.php
+│       │   ├── cadastro.php
+│       │   ├── login.php
+│       │   └── logout.php
+│       │
+│       ├── carrinho/
+│       │   └── index.php
+│       │
+│       ├── clientes/
+│       │   ├── cadastrar.php
+│       │   ├── editar.php
+│       │   ├── excluir.php
+│       │   ├── index.php
+│       │   └── listar.php
+│       │
+│       ├── dashboard/
+│       │   └── index.php
+│       │
+│       ├── empresas/
+│       │   ├── cadastrar.php
+│       │   ├── editar.php
+│       │   ├── excluir.php
+│       │   └── listar.php
+│       │
+│       ├── home/
+│       │   └── index.php
+│       │
+│       ├── pedidos/
+│       │   ├── cadastrar.php
+│       │   ├── editar.php
+│       │   ├── excluir.php
+│       │   ├── listar.php
+│       │   └── sucesso.php
+│       │
+│       ├── produtos/
+│       │   ├── cadastrar.php
+│       │   ├── editar.php
+│       │   ├── excluir.php
+│       │   ├── form.php
+│       │   ├── index.php
+│       │   └── listar.php
+│       │
+│       └── usuarios/
+│           ├── cadastrar.php
+│           ├── editar.php
+│           ├── excluir.php
+│           └── listar.php
+│
+├── config/
+│   └── database.php
+│
+├── database/
+│   └── sistema_vendas.sql
+│
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── script.js
+│   │
+│   ├── img/
+│   │   ├── x-tudo.jpg
+│   │   ├── x-salada.jpg
+│   │   ├── x-bacon.jpg
+│   │   ├── x-egg.jpg
+│   │   ├── x-calabresa.jpg
+│   │   ├── batata frita tradicional.jpg
+│   │   ├── batata smile.jpg
+│   │   └── ...
+│   │
+│   └── uploads/
+│
+├── index.php
+└── README.md
+```
+
+# 7. Tecnologias Utilizadas
+
+* PHP 8+
+* MySQL
+* HTML5
+* CSS3
+* JavaScript
+* PDO
+* Programação Orientada a Objetos (POO)
+* Arquitetura MVC
+
+---
+
+# 8. Instalação
+
+1. Clonar o repositório:
+
+```bash
+git clone https://github.com/seuusuario/sistema-vendas.git
+```
+
+2. Importar o banco de dados:
+
+```sql
+database/sistema_vendas.sql
+```
+
+3. Configurar as credenciais do banco de dados no arquivo:
+
+```php
+config/database.php
+```
+
+4. Iniciar o servidor local:
+
+```bash
+php -S localhost:8000
+```
+
+5. Acessar no navegador:
+
+```text
+http://localhost:8000
+```
+
+---
+
+# 9. Funcionalidades Extras
+
 * Dashboard administrativo;
+* Upload de imagens;
 * Carrinho de compras;
-* Filtro de produtos por categoria;
-* Histórico de pedidos;
-* Relatório de vendas.
+* Controle de acesso;
+* Gerenciamento completo de produtos;
+* Gerenciamento completo de clientes;
+* Gerenciamento completo de pedidos;
+* Gerenciamento completo de empresas.
 
 ---
 
-## 9. Benefícios Esperados
+# 10. Benefícios Esperados
 
-O sistema proporcionará:
+* Organização dos processos comerciais;
+* Facilidade no gerenciamento de dados;
+* Centralização das informações;
+* Maior produtividade dos usuários;
+* Melhor controle de clientes e produtos;
+* Facilidade de manutenção e expansão do sistema.
 
-* Maior agilidade no atendimento;
-* Integração entre vendas presenciais e online;
-* Melhor controle de estoque;
-* Segurança operacional;
-* Facilidade no gerenciamento administrativo;
-* Melhor experiência para o cliente final.
+---
+
+# 11. Desenvolvedora
+
+**Taila Santos**
+
+Projeto desenvolvido para fins acadêmicos e aprendizado em desenvolvimento web utilizando PHP, MySQL e Arquitetura MVC.
